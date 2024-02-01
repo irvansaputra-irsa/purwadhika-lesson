@@ -1,1 +1,0 @@
-# purwadhika-lesson
