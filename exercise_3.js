@@ -1,4 +1,12 @@
 // Write a code to display the multiplication table of a given integer.
+function showMultiplication(number){
+    let message="";
+    for(let i=1 ;i<=10 ;i++){
+        message+= `${number} x ${i} \n`;
+    }
+    return message;
+}
+console.log(showMultiplication("9"));
 // Write a code to check whether a string is a palindrome or not.
 function checkPalindrome(word){
     let left = 0;
