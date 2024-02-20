@@ -1,7 +1,10 @@
 //[1] Create a function to convert Excel sheet column title to its corresponding column number.
+// hint: similar like multiplication or binomial to decimal things
+// example: AA 
+// A            A 
+// 1*(26^1)     1*(26^0)
+
 const convertAlphaNumber = (input) => {
-    const plus = 26;
-    const minus = 64;
     let result = 0;
     for(let i=0 ; i<input.length ; i++){
         let char = input.charCodeAt(i) - 64;
@@ -9,7 +12,8 @@ const convertAlphaNumber = (input) => {
     }
     return result;
 }
-console.log(convertAlphaNumber('AB'));
+console.log(convertAlphaNumber('AA'));
+
 //[2] Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 //almost every element shown twice
 const notTwiceNum = (arrays) => {
@@ -19,7 +23,7 @@ const notTwiceNum = (arrays) => {
         if(isExist) stack = stack.filter((el) => el !== arr);
         else stack.push(arr);
     }
-    return parseInt(stack);
+    return stack? parseInt(stack) : 'Tidak ada';
 }
 console.log(notTwiceNum([4,1,2,1,2]));
 
@@ -33,6 +37,7 @@ const checkAnagram = (s,t) => {
         } else {
             tempS[char] = 1;
         }
+        console.log(temps);
     }
     let tempT = {};
     for(let char of t){
@@ -48,7 +53,6 @@ const checkAnagram = (s,t) => {
     }
     return true;
 }
-console.log(checkAnagram('rat",','car'));
 
 //[4] You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 // question: how many DISTINCT WAY ? e.g 2-1 and 1-2 diff

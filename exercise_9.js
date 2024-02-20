@@ -1,5 +1,6 @@
 // [1] Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
 // requirement : more than n/2 times
+// assume that the majority element ALWAYS EXISTS in the array
 function findMajority(arrays){
     const numMap = new Map();
 
@@ -17,11 +18,10 @@ function findMajority(arrays){
                 majority = key;
             }
         }
-        
         return majority;
     } else return 'Please input valid array';
 }
-console.log(findMajority([1,1,3,3]));
+console.log(findMajority([4,2,3,4,1]));
 
 // [2] Create a function to convert roman numeral to integer.
 // algorithm:
@@ -43,7 +43,6 @@ function convertRomanToInteger(wordRoman){
 
     for(let i=0 ; i<wordRoman.length ; i++){
         // if(i < wordRoman.length-1){
-            console.log(romanToNum(wordRoman[i]) >= romanToNum(wordRoman[i+1]))
             if(i === wordRoman.length-1 || romanToNum(wordRoman[i]) >= romanToNum(wordRoman[i+1])){
                 result += romanToNum(wordRoman[i]);
             }else{
@@ -79,11 +78,25 @@ function pascalTriangle(n){
             }
         }
     }
-
+    return arrays;
+}
+function pascalTri(n){
+    let arrays = [];
+    for(let i = 0 ; i<n ; i++){
+        let temp = []; 
+        for(let k=0 ; k<=i ; k++){
+            if(k === 0 || k === i){ //first or last element clause
+                temp.push(1);
+            }else {
+                temp.push(arrays[i-1][k] + arrays[i-1][k-1])
+            }
+        }
+        arrays.push(temp);
+    }
     return arrays;
 }
 console.log(pascalTriangle(5));
-
+console.log(pascalTri(5));
 
 // [4] Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 // cannot sell on first and buy on the last day
@@ -104,10 +117,11 @@ function maxProfit(arrays){
     // return Math.max(...temp);
 
     //cara 2 - greedy algorithm
-    // let i = 1;
+    // let i = 0;
     // let size = arrays.length;
     // let maxValue = 0;
     // while (i < size) {
+    //     console.log(...arrays.slice(i+1))
     //     let maxTemp= Math.max(...arrays.slice(i+1)) - arrays[i];
     //     maxValue = Math.max(maxTemp, maxValue);
     //     i++;
@@ -131,7 +145,7 @@ function maxProfit(arrays){
     }
     return maxVal;
 }
-
-console.log(maxProfit([7,1,5,3,6,4]));  
+console.log(maxProfit([7,1,5,3,6,4]));
+console.log(maxProfit([2,8,1,3,5]));  
 //another test case 
 //[2,8,1,3,5]
