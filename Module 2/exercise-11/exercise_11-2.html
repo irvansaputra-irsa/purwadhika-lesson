@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of set 10 champs</title>
+    <style>
+        table{
+            background-color: beige;
+            border-collapse: collapse;
+        }
+        table th, table td{
+            border: 1px solid black;
+            padding: 7px;
+        }
+        table thead th {
+            font-weight: bold;
+        }
+        table thead th:not(:first-child){
+            width: 30%;
+        }
+        table td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>No.</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Trait</th>
+            <th>Current Meta?</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><img src="https://rerollcdn.com/characters/Skin/10/Ahri.png"></td>
+                <td>Ahri<sup>ap</sup></td>
+                <td>KD/A <sub>Spellweaver</sub></td>
+                <td>
+                    <input type="radio" value="yes" name="carryable1" checked />
+                    <label for="yes"> Yes </label>
+                    <input type="radio" value="no" name="carryable1" />
+                    <label for="no"> No </label>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><img src="https://rerollcdn.com/characters/Skin/10/Bard.png"></td>
+                <td>Bard<sup>ap</sup></td>
+                <td>Jazz <sub>Dazzler</sub></td>
+                <td>
+                    <input type="radio" value="yes" name="carryable2" />
+                    <label for="yes"> Yes </label>
+                    <input type="radio" value="no" name="carryable2" checked />
+                    <label for="no"> No </label>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><img src="https://rerollcdn.com/characters/Skin/10/Ezreal.png"></td>
+                <td>Ezreal<sup>ad</sup></td>
+                <td>Heartsteel <sub>Big Shot</sub></td>
+                <td>
+                    <input type="radio" value="yes" name="carryable3" checked />
+                    <label for="yes"> Yes </label>
+                    <input type="radio" value="no" name="carryable3" />
+                    <label for="no"> No </label>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><img src="https://rerollcdn.com/characters/Skin/10/Thresh.png"></td>
+                <td>Thresh<sup>tank</sup></td>
+                <td>Country <sub>Guardian</sub></td>
+                <td>
+                    <input type="radio" value="yes" name="carryable4" />
+                    <label for="yes"> Yes </label>
+                    <input type="radio" value="no" name="carryable4" checked />
+                    <label for="no"> No </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
